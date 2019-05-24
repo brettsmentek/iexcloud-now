@@ -4,8 +4,8 @@ import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 
 export const getPriceForTicker = gql`
-  query price($ticker: String!) {
-    tops(ticker: $ticker) {
+  query security($ticker: String!) {
+    security(ticker: $ticker) {
       lastSalePrice
     }
   }
@@ -29,7 +29,7 @@ export default class extends React.PureComponent {
 
     return (
       <Query query={getPriceForTicker} variables={queryVars} pollInterval={5000}>
-        {({ error, data: { tops: { lastSalePrice } } }) => {
+        {({ error, data: { security: { lastSalePrice } } }) => {
           if (error) {
             return <span>Error</span>
           }
