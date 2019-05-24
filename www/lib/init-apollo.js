@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch'
 let apolloClient = null
 
 function getUri () {
-  if (process.env.NOW_REGION === 'dev1' || (location && location.href === `http://localhost:3000/`)) {
+  if (process.env.NOW_REGION === 'dev1' || (typeof location !== 'undefined' && location.host === 'localhost:3000')) {
     return 'http://localhost:3000/api/gql'
   } else {
     return 'https://iexcloud-now.brettsmentek.now.sh/api/gql'
