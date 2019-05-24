@@ -1,4 +1,4 @@
-# IEXCloud + Now.sh
+# IEX Cloud + Now.sh
 
 ## What is this?
 
